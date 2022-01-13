@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+      <!-- Required meta tags -->
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+      <link rel="shortcut icon" type="image/x-icon" href="#">
+      <title>Husky | Home</title>
+</head>
+
+<body>
+      
+      <h1 class="text-primary">teste</h1>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="cdn/libs/jquery/jquery-3.5.1.js"></script>
+      <script src="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/js/popper.min.js"></script>
+      <script src="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/js/bootstrap.min.js"></script>
+      <script src="cdn/js/functions.js"></script>
+      <script>
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                  return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+            var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+                  return new bootstrap.Popover(popoverTriggerEl)
+            });
+      </script>
+
+</body>
+
+</html>
