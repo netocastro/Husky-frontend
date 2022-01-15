@@ -72,7 +72,6 @@ $(document).ready(function () {
             "delivery_id": $('#id').html(),
             "motoboy_id": $('#change-motoboy').val()
         };
-        console.log(request);
 
         $.ajax({
             url: 'https://localhost/development/entrevistas/Husky/web/changeMotoboyDelivery',
@@ -92,9 +91,11 @@ $(document).ready(function () {
 
     // Preenche o select com com todos os estatos com a reposta do banco de dados
     function changeStatus(data) {
+
         $('#change-status').append(`
-                <option value=""> -- </option>
-            `);
+            <option value=""> -- </option>
+        `);
+
         data.forEach(element => {
             $('#change-status').append(`
                 <option value="${element.id}">${element.name}</option>
@@ -104,11 +105,12 @@ $(document).ready(function () {
 
     // preenche o select de motoboys.
     function changeMotoboy(data) {
-        console.log(data);
+
         $('#change-motoboy').append(`
-                <option value=""> -- </option>
-                <option value="0"> Remover Motoboy </option>
-            `);
+            <option value=""> -- </option>
+            <option value="0"> Remover Motoboy </option>
+        `);
+
         data.forEach(element => {
             $('#change-motoboy').append(`
                 <option value="${element.id}">${element.name}</option>

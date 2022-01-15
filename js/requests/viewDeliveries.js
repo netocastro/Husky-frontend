@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+ 
     // Requisição que busca todas as Entregas.
     $.ajax({
         url: 'https://localhost/development/entrevistas/Husky/delivery/',
@@ -20,7 +20,6 @@ $(document).ready(function () {
         type: 'GET',
         dataType: "JSON",
         success: (data) => {
-            console.log(data);
             motoboys(data);
         },
         error: (error) => {
@@ -64,7 +63,6 @@ $(document).ready(function () {
 
     //Função que preenche a tabela com as Entregas selecionadas
     function buildTable(data) {
-
         data.forEach(element => {
             $("#list-delivery").append(`
                 <tr>
@@ -110,14 +108,13 @@ $(document).ready(function () {
         $("#motoboy_id").append(`<option value="0">All</option>`);
 
         data.forEach(element => {
-            console.log(element);
             $("#motoboy_id").append(`
                 <option value="${element.id}">${element.name}</option>
             `).fadeIn();
         });
     }
 
-        // Função que preenche o select com todos os status do banco de dados
+    // Função que preenche o select com todos os status do banco de dados
 
     function changeStatus(data) {
         $('#status_id').append(`

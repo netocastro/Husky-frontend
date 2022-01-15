@@ -45,19 +45,6 @@ $(document).ready(function () {
         }
     });
 
-    //Reuisição que busca a Entrega que será editada.
-    $.ajax({
-        url: 'https://localhost/development/entrevistas/Husky/delivery/' + id,
-        type: 'GET',
-        dataType: "JSON",
-        success: (data) => {
-            editDelivery(data);
-        },
-        error: (error) => {
-            console.log(error.responseText);
-        }
-    });
-
     //Requisição que de fato atualiza a Entrega.
     $('#update-delivery').on('submit', function (e) {
         e.preventDefault();
@@ -71,7 +58,6 @@ $(document).ready(function () {
             success: (data) => {
                 validateFields(data, _this);
                 window.location.href = "https://localhost/development/entrevistas/Husky_frontend/vizualizar-entrega.html?" + data.id;
-                
             },
             error: (error) => {
                 console.log(error.responseText);
@@ -94,26 +80,10 @@ $(document).ready(function () {
         });
     });
 
-    // preenche todos os campos com as informações da entrega atual.
-    function editDelivery(data) {
-        console.log(data);
-        $('#collection_address').val(data[0].collection_address);
-        $('#destination_address').val(data[0].destination_address);
-        $('#users').val(data[0].user_id);
-        $('#motoboys').val(data[0].motoboy_id);
-        if (data[0].motoboy_id == null) {
-            $('#motoboys').val('0');
-        } else {
-            $('#motoboys').val(data[0].motoboy_id);
-        }
-    }
-
     // preenche o select de usuarios.
     function users(data) {
         $("#users").html('');
-
         data.forEach(element => {
-           
             $("#users").append(`
                 <option value="${element.id}">${element.name}</option>
             `).fadeIn();
@@ -126,7 +96,6 @@ $(document).ready(function () {
         $("#motoboys").append(`<option value="0">--</option>`).fadeIn();
 
         data.forEach(element => {
-
             $("#motoboys").append(`
                 <option value="${element.id}">${element.name}</option>
             `).fadeIn();
@@ -145,4 +114,25 @@ $(document).ready(function () {
         });
     }
 
+    //Reuisição que busca a Entrega que será editada.
+    $.ajax({
+        url: 'https://localhost/development/entrevistas/Husky/delivery/' + id,
+        type: 'GET',
+        dataType: "JSON",
+        success: (data) => {
+            editDelivery(data);
+        },
+        error: (error) => {
+            console.log(error.responseText);
+        }
+    });
+
+    // preenche todos os campos com as informações da entrega atual.
+    function editDelivery(data) {
+        $('#collection_address').val(data[0].collection_address);
+        $('#destination_address').val(data[0].destination_address);
+        $('#users').val(data[0].user_id);
+        $('#motoboys').val(data[0].motoboy_id);
+        $('#status_id').val(data[0].status);
+    }
 });
