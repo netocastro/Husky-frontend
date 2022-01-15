@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="https://gohusky.net/images/favicon.ico">
+    <title>Husky | Ver Entregas</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+              <a class="navbar-brand" href="index.html"><img src="cdn/assets/media/images/logos/logohusky.png "
+                          alt="Husty" style="width: 90px;"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                      Entregas
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <li><a class="dropdown-item" href="cadastrar-entregas.html">Cadastrar</a></li>
+                                      <li><a class="dropdown-item" href="vizualizar-entregas.html">Vizualizar</a>
+                                      </li>
+                                </ul>
+                          </li>
+                    </ul>
+              </div>
+        </div>
+  </nav>
+
+    <div class="row">
+        <div class="col-1 col-sm-2 col-md-1 col-lg-1"></div>
+        <div class="col-10 col-sm-8 col-md-10 col-lg-10 ">
+            <h1 class="my-5 text-center">Lista de entregas</h1>
+            <div class="row d-flex justify-content-center mt-2 mb-4">
+                <div class="col-6 col-md-6 d-flex align-items-center justify-content-center">
+                    <div class="col-12 col-sm-6 col-md-6">
+                        <strong>Status</strong>
+                        <select id="status_id" class="form-select">
+                          
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6 col-md-6 d-flex align-items-center justify-content-center ">
+                    <div class="col-12 col-sm-6 col-md-6">
+                        <strong>Motoboy</strong>
+                        <select id="motoboy_id" class="form-select">
+                          
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">cliente</th>
+                        <th scope="col">motoboy</th>
+                        <th scope="col">status</th>
+                        <th scope="col">End. loja</th>
+                        <th scope="col">End. cliente</th>
+                        <th scope="col">ver</th>
+                    </tr>
+                </thead>
+                <tbody id="list-delivery">
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1 col-sm-2 col-md-1 col-lg-1"></div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="cdn/libs/jquery/jquery-3.5.1.js"></script>
+    <script src="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/js/popper.min.js"></script>
+    <script src="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/js/bootstrap.min.js"></script>
+    <script src="cdn/js/functions.js"></script>
+    <script src="js/requests/viewDeliveries.js"></script>
+
+</body>
+
+</html>

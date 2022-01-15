@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/x-icon" href="https://gohusky.net/images/favicon.ico">
+    <title>Husky | Cadastro Entrega</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+              <a class="navbar-brand" href="index.html"><img src="cdn/assets/media/images/logos/logohusky.png "
+                          alt="Husty" style="width: 90px;"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                      data-bs-toggle="dropdown" aria-expanded="false">
+                                      Entregas
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                      <li><a class="dropdown-item" href="cadastrar-entregas.html">Cadastrar</a></li>
+                                      <li><a class="dropdown-item" href="vizualizar-entregas.html">Vizualizar</a>
+                                      </li>
+                                </ul>
+                          </li>
+                    </ul>
+              </div>
+        </div>
+  </nav>
+
+    <div class="row">
+        <div class="col-1 col-sm-3 col-md-3 col-lg-4"></div>
+        <div class="col-10 col-sm-6 col-md-6 col-lg-4">
+            <h1 class="my-3">Registro de entrega</h1>
+            <form id="register-delivery" action="https://localhost/development/entrevistas/Husky/delivery" method="POST"
+                data-type="JSON">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="user_id" class="form-label">Clientes</label>
+                        <select class="form-select" id="users" name="user_id" required="">
+
+                        </select>
+
+                    </div>
+                    <div class="col-md-6">
+                        <label for="motoboy_id" class="form-label">Motoboys <span
+                                class="text-muted">(Optional)</span></label>
+                        <select class="form-select" id="motoboys" name="motoboy_id">
+
+                        </select>
+
+                    </div>
+
+                    <div class="col-12">
+                        <label for="collection_address" class="form-label">Endereço de coleta</label>
+                        <input type="text" class="form-control" id="collection_address" name="collection_address"
+                            placeholder="Ex: endereço da loja" required="">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="destination_address" class="form-label">Endereço de destino <span
+                                class="text-muted">(Optional)</span></label>
+                        <input type="text" class="form-control" id="destination_address" name="destination_address"
+                            placeholder="Ex: rua maria n° 25, bairro 12, Maceio_AL" required="">
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <button class="w-100 btn btn-primary btn-lg mb-5" type="submit">Registrar entrega</button>
+            </form>
+
+
+        </div>
+        <div class="col-1 col-sm-3 col-md-3 col-lg-4"></div>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="cdn/libs/jquery/jquery-3.5.1.js"></script>
+    <script src="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/js/popper.min.js"></script>
+    <script src="cdn/libs/bootstrap/dist/bootstrap-5.0.0-beta3/js/bootstrap.min.js"></script>
+    <script src="cdn/js/functions.js"></script>
+    <script src="js/requests/registerDelivery.js"></script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        });
+    </script>
+
+</body>
+
+</html>
